@@ -78,6 +78,10 @@ resource "aws_eks_cluster" "default" {
     aws_security_group_rule.ingress_workers,
     aws_cloudwatch_log_group.default
   ]
+
+  lifecycle {
+    create_before_destroy = false
+  }
 }
 
 # Enabling IAM Roles for Service Accounts in Kubernetes cluster
