@@ -288,3 +288,10 @@ variable "addons" {
   default     = []
   description = "Manages [`aws_eks_addon`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_addon) resources."
 }
+
+#Orion Project
+variable "orion_extra_sg" {
+  type        = list(string)
+  default     = []
+  description = "Additional list of Security Group IDs for the cross-account elastic network interfaces that Amazon EKS creates"
+}
