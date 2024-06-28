@@ -43,6 +43,7 @@ resource "aws_kms_alias" "cluster" {
 }
 
 resource "aws_eks_cluster" "default" {
+  #checkov:skip=CS_AWS_EKS_06:The eks cluster have a temp version
   count                     = local.enabled ? 1 : 0
   name                      = module.label.id
   tags                      = module.label.tags
